@@ -1,3 +1,11 @@
+var parent = document.body; // Element that holds the mover
+var mover = document.createElement('img');
+mover.src = "https://i.pinimg.com/originals/ce/57/77/ce5777bf7b7bd966ef14f4a0c7e4c845.gif";
+mover.style.zIndex = 60000000000001;
+parent.appendChild(mover);
+var dir = 1; // The direction we are moving... 1 is right, -1 is left.
+var dist = 10; // The distance we move each "tick"
+mover.style.position = "absolute";
 var layers = [];
 for(let i = 0;i<25;i++){
 let myLayer = document.createElement('div');
@@ -27,7 +35,4 @@ setInterval(function() {
 	}
 	myLayery.style.background = 'rgb(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';
 	
-  }
-}, 10);
-
-//source code
+ }
