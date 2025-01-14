@@ -17,10 +17,10 @@ myLayer.style.width = '20%';
 myLayer.style.height = '20%';
 myLayer.style.padding = '0px';
 myLayer.style.background = '#000000';
-myLayer.innerHTML = '.<h1 style="color:white;position:absolute;font-size:300%;">HAVE A SEIZURE</h1>';
+myLayer.innerHTML = '.<h1 style="color:white;position:absolute;font-size:3vw;">HAVE A SEIZURE</h1>';
 myLayer.color = "white";
 myLayer.hidden = i % 2;
-myLayer.style.zIndex = 60000000000000;
+myLayer.style.zIndex = 6000000000;
 layers.push(myLayer);
 document.body.appendChild(myLayer);
 }
@@ -28,11 +28,12 @@ document.body.appendChild(myLayer);
 setInterval(function() {
   for(let i = 0;i<layers.length;i++){
   let myLayery = layers[i];
-	if(myLayery.hidden) {
-		myLayery.hidden = false;
-	} else {
-		myLayery.hidden = true;
-	}
+  // console.log(Math.sin(Date.now()));
+  if(Math.sin(Date.now()) > -0.5){
+    myLayery.hidden = true;
+  }else{
+    myLayery.hidden=false;
+  }
 	myLayery.style.background = 'rgb(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';
 	
   }
@@ -58,6 +59,6 @@ setInterval(function() {
 
     // Set the new position
     mover.style.left = posX + "px";
-}, 10);
+}, 30);
 
    
