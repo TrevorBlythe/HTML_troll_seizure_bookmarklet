@@ -6,6 +6,7 @@ parent.appendChild(mover);
 var dir = 1; // The direction we are moving... 1 is right, -1 is left.
 var dist = 10; // The distance we move each "tick"
 mover.style.position = "absolute";
+mover.style.top = 0;
 var layers = [];
 for(let i = 0;i<25;i++){
 let myLayer = document.createElement('div');
